@@ -47,6 +47,16 @@ const styles = StyleSheet.create({
         height: 1079,
         position: "absolute"
     },
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    timer: {
+        fontSize: 40,
+        fontWeight: "bold",
+        color: "black",
+    },
     fixYourSpine: {
         fontSize: 24,
         fontWeight: "200",

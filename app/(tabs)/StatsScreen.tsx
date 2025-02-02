@@ -1,8 +1,11 @@
-import * as React from "react";
+
+import React, { useState, useEffect } from "react";
 import {Image, StyleSheet, Text, View, Pressable, Linking} from "react-native";
 import { Color, FontFamily, FontSize, Gap, StyleVariable, Border } from "../../constants/GlobalStyles";
 
 const StatsScreen = ({ navigation }: any) => {
+
+
 
     return (
         <View style={styles.statsScreen}>
@@ -19,6 +22,7 @@ a total of`}</Text>
 a total of`}</Text>
                     <Text style={[styles.minutes, styles.minutesFlexBox]}>57 Minutes!</Text>
                 </View>
+
                 <View style={styles.youWereFocusedForATotalOParent}>
                     <Text style={[styles.yourSpineWas, styles.minutesFlexBox]}>Your spine is</Text>
                     <Text style={[styles.minutes, styles.minutesFlexBox]}> Thankful</Text>
@@ -45,6 +49,16 @@ const styles = StyleSheet.create({
         width: 348,
         height: 1079,
         position: "absolute"
+    },
+    container: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    timer: {
+        fontSize: 40,
+        fontWeight: "bold",
+        color: "black",
     },
     sessionHistory: {
         marginLeft: -162.5,

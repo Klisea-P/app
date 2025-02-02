@@ -1,28 +1,34 @@
 import * as React from "react";
-import {Image, StyleSheet, Text, View, Pressable} from "react-native";
+import { Image, StyleSheet, Text, View, Pressable, Linking } from "react-native";
 import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
 
 const HomeScreen = () => {
-
     return (
         <View style={[styles.homeScreen, styles.homeScreenLayout]}>
             <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
             <View style={styles.fixYourSpineOneSessionAtParent}>
-                <Text style={styles.fixYourSpine}>{`Fix your spine
-          					One session at a time`}</Text>
+                <Text style={styles.fixYourSpine}>{`Fix your spine\nOne session at a time`}</Text>
                 <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
-                <Pressable style={styles.button} onPress={()=>{}}>
+
+                {/* ✅ Using Linking to Open Another Screen */}
+                <Pressable
+                    style={styles.button}
+                    onPress={() => Linking.openURL("http://localhost:8081/index2")}>
                     <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
                 </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.startSession, styles.startSessionTypo]}>Start Test Session</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
+
+                <Pressable
+                    style={styles.button}
+                    onPress={() => Linking.openURL("http://localhost:8081/StatsScreen")}>
                     <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
                 </Pressable>
             </View>
-        </View>);
+        </View>
+    );
 };
+
+
+
 
 const styles = StyleSheet.create({
     homeScreenLayout: {
