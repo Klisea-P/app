@@ -2,7 +2,7 @@ import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
 import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: any) => {
 
     return (
         <View style={[styles.homeScreen, styles.homeScreenLayout]}>
@@ -11,12 +11,17 @@ const HomeScreen = () => {
                 <Text style={styles.fixYourSpine}>{`Fix your spine
 One session at a time`}</Text>
                 <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
-                <Pressable style={styles.button} onPress={()=>{}}>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => navigation.navigate("CameraScreenGreen")}>
                     <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
                 </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
+                <Pressable
+                    style={styles.button}
+                    onPress={() => navigation.navigate("StatsScreen")}>
                     <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
                 </Pressable>
+
             </View>
         </View>);
 };

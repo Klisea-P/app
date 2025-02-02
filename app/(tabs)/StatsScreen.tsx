@@ -2,11 +2,11 @@ import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
 import { Color, FontFamily, FontSize, Gap, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const StatsScreen = () => {
+const StatsScreen = ({ navigation }: any) => {
 
     return (
         <View style={styles.statsScreen}>
-            <Image style={styles.path11Icon} resizeMode="cover" source="path1 1.png" />
+            <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
             <Text style={styles.sessionHistory}>{`Session History`}</Text>
             <View style={styles.frameParent}>
                 <View style={styles.yourSpineWasStraightForAParent}>
@@ -24,9 +24,12 @@ a total of`}</Text>
                     <Text style={[styles.minutes, styles.minutesFlexBox]}> Thankful</Text>
                 </View>
             </View>
-            <Pressable style={styles.button} onPress={()=>{}}>
+            <Pressable
+                style={styles.button}
+                onPress={() => navigation.navigate("HomeScreen")}>
                 <Text style={styles.goHome}>Go Home</Text>
             </Pressable>
+
         </View>);
 };
 

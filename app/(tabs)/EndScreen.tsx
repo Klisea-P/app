@@ -2,14 +2,13 @@ import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
 import { Gap, Color, FontFamily, FontSize, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const EndScreen = () => {
+const EndScreen = ({ navigation }: any) => {
 
 
-    // @ts-ignore
     return (
         <View style={styles.endScreen}>
 
-            <Image style={styles.path11Icon} resizeMode="cover" source="path1 1.png" />
+            <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
             <Text style={styles.sessionStats}>{`Session Stats`}</Text>
             <View style={styles.frameParent}>
                 <View style={[styles.yourSpineWasStraightForParent, styles.forParentFlexBox]}>
@@ -25,7 +24,9 @@ const EndScreen = () => {
                     <Text style={[styles.minutes, styles.minutesFlexBox]}> Thankful</Text>
                 </View>
             </View>
-            <Pressable style={styles.button} onPress={()=>{}}>
+            <Pressable
+                style={styles.button}
+                onPress={() => navigation.navigate("HomeScreen")}>
                 <Text style={styles.goHome}>Go Home</Text>
             </Pressable>
         </View>);

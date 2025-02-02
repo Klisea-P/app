@@ -2,14 +2,17 @@ import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
 import { Border, FontFamily, Color, StyleVariable } from "../../constants/GlobalStyles";
 
-const CameraScreenGreen = () => {
+const CameraScreenGreen = ({ navigation }: any) => {
 
     return (
         <View style={[styles.cameraScreenGreen, styles.buttonLayout]}>
             <Image style={styles.posturePicIcon} resizeMode="cover" source={require("../../assets/images/Posture pic.png")} />
-            <Pressable style={[styles.button, styles.buttonFlexBox]} onPress={()=>{}}>
+            <Pressable
+                style={styles.button}
+                onPress={() => navigation.navigate("EndScreen")}>
                 <Text style={[styles.endSession, styles.textTypo]}>End Session</Text>
             </Pressable>
+
             <View style={styles.cameraScreenGreenChild} />
             <View style={[styles.clockParent, styles.buttonFlexBox1]}>
                 <Image style={styles.clockIcon} resizeMode="cover" source={require("../../assets/images/clock.png")} />
