@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Image, StyleSheet, Text, View, Pressable} from "react-native";
+import {Image, StyleSheet, Text, View, Pressable, Linking} from "react-native";
 import { Gap, Color, FontFamily, FontSize, StyleVariable, Border } from "../../constants/GlobalStyles";
 
 const EndScreen = ({ navigation }: any) => {
@@ -26,7 +26,7 @@ const EndScreen = ({ navigation }: any) => {
             </View>
             <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate("HomeScreen")}>
+                onPress={() => Linking.openURL("http://localhost:8081/homescreen")}>
                 <Text style={styles.goHome}>Go Home</Text>
             </Pressable>
         </View>);

@@ -1,30 +1,34 @@
 import * as React from "react";
-import {Image, StyleSheet, Text, View, Pressable} from "react-native";
+import { Image, StyleSheet, Text, View, Pressable, Linking } from "react-native";
 import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const HomeScreen = ({ navigation }: any) => {
-
+const HomeScreen = () => {
     return (
         <View style={[styles.homeScreen, styles.homeScreenLayout]}>
             <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
             <View style={styles.fixYourSpineOneSessionAtParent}>
-                <Text style={styles.fixYourSpine}>{`Fix your spine
-One session at a time`}</Text>
+                <Text style={styles.fixYourSpine}>{`Fix your spine\nOne session at a time`}</Text>
                 <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
+
+                {/* ✅ Using Linking to Open Another Screen */}
                 <Pressable
                     style={styles.button}
-                    onPress={() => navigation.navigate("CameraScreenGreen")}>
+                    onPress={() => Linking.openURL("http://localhost:8081/CameraScreenGreen")}>
                     <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
                 </Pressable>
+
                 <Pressable
                     style={styles.button}
-                    onPress={() => navigation.navigate("StatsScreen")}>
+                    onPress={() => Linking.openURL("http://localhost:8081/StatsScreen")}>
                     <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
                 </Pressable>
-
             </View>
-        </View>);
+        </View>
+    );
 };
+
+
+
 
 const styles = StyleSheet.create({
     homeScreenLayout: {

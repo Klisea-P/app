@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Image, StyleSheet, Text, View, Pressable} from "react-native";
+import {Image, StyleSheet, Text, View, Pressable,Linking } from "react-native";
 import { Border, FontFamily, Color, StyleVariable } from "../../constants/GlobalStyles";
 
 const CameraScreenGreen = ({ navigation }: any) => {
@@ -9,7 +9,7 @@ const CameraScreenGreen = ({ navigation }: any) => {
             <Image style={styles.posturePicIcon} resizeMode="cover" source={require("../../assets/images/Posture pic.png")} />
             <Pressable
                 style={styles.button}
-                onPress={() => navigation.navigate("EndScreen")}>
+                onPress={() => Linking.openURL("http://localhost:8081/EndScreen")}>
                 <Text style={[styles.endSession, styles.textTypo]}>End Session</Text>
             </Pressable>
 

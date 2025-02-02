@@ -15,6 +15,9 @@ const HomeScreen = () => {
                     <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
                 </Pressable>
                 <Pressable style={styles.button} onPress={()=>{}}>
+                    <Text style={[styles.startSession, styles.startSessionTypo]}>Start Test Session</Text>
+                </Pressable>
+                <Pressable style={styles.button} onPress={()=>{}}>
                     <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
                 </Pressable>
             </View>
