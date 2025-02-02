@@ -6,6 +6,7 @@ import {
     StyleSheet,
     Dimensions
 } from 'react-native';
+import Sound from 'react-native-sound';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 
 export default function PoseTrackingApp() {
