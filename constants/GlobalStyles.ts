@@ -1,25 +1,37 @@
 import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
-import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const HomeScreen = () => {
 
-    return (
-        <View style={[styles.homeScreen, styles.homeScreenLayout]}>
-            <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
-            <View style={styles.fixYourSpineOneSessionAtParent}>
-                <Text style={styles.fixYourSpine}>{`Fix your spine
-          					One session at a time`}</Text>
-                <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
-                </Pressable>
-            </View>
-        </View>);
+/* fonts */
+export const FontFamily = {
+    interMedium: "Inter-Medium",
+    interBold: "Inter-Bold",
+    interRegular: "Inter-Regular",
+    interExtraLight: "Inter-ExtraLight"
 };
+/* font sizes */
+export const FontSize = {
+    size_13xl: 32,
+    size_5xl: 24,
+};
+/* Colors */
+export const Color = {
+    colorDarkslateblue: "#003f70",
+};
+/* Style Variables */
+export const StyleVariable = {
+    space200: 8,
+    space300: 12,
+};
+/* Gaps */
+export const Gap = {
+    gap_md: 20,
+};
+/* border radiuses */
+export const Border = {
+    br_6xl: 25,
+};
+
 
 const styles = StyleSheet.create({
     homeScreenLayout: {
@@ -92,4 +104,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default HomeScreen;
+// export default HomeScreen;
