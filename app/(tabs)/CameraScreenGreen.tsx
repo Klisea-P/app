@@ -1,95 +1,108 @@
 import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
-import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
+import { Border, FontFamily, Color, StyleVariable } from "../../constants/GlobalStyles";
 
-const HomeScreen = () => {
+const CameraScreenGreen = () => {
 
     return (
-        <View style={[styles.homeScreen, styles.homeScreenLayout]}>
-            <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
-            <View style={styles.fixYourSpineOneSessionAtParent}>
-                <Text style={styles.fixYourSpine}>{`Fix your spine
-          					One session at a time`}</Text>
-                <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
-                </Pressable>
+        <View style={[styles.cameraScreenGreen, styles.buttonLayout]}>
+            <Image style={styles.posturePicIcon} resizeMode="cover" source={require("../../assets/images/Posture pic.png")} />
+            <Pressable style={[styles.button, styles.buttonFlexBox]} onPress={()=>{}}>
+                <Text style={[styles.endSession, styles.textTypo]}>End Session</Text>
+            </Pressable>
+            <View style={styles.cameraScreenGreenChild} />
+            <View style={[styles.clockParent, styles.buttonFlexBox1]}>
+                <Image style={styles.clockIcon} resizeMode="cover" source={require("../../assets/images/clock.png")} />
+                <View style={styles.buttonFlexBox}>
+                    <Text style={[styles.text, styles.textTypo]}>00:57:16</Text>
+                </View>
             </View>
         </View>);
 };
 
 const styles = StyleSheet.create({
-    homeScreenLayout: {
-        width: "100%",
-        overflow: "hidden"
+    buttonLayout: {
+        overflow: "hidden",
+        borderRadius: Border.br_6xl
     },
-    startSessionTypo: {
-        textAlign: "left",
+    buttonFlexBox: {
+        justifyContent: "center",
+        flexDirection: "row"
+    },
+    textTypo: {
         fontFamily: FontFamily.interMedium,
         fontWeight: "500"
     },
-    path11Icon: {
-        top: -177,
-        left: -86,
-        width: 348,
-        height: 1079,
+    buttonFlexBox1: {
+        alignItems: "center",
         position: "absolute"
     },
-    fixYourSpine: {
-        fontSize: 24,
-        fontWeight: "200",
-        fontFamily: FontFamily.interExtraLight,
-        color: "#000",
-        textAlign: "center",
-        height: 58,
-        lineHeight: 32,
-        alignSelf: "stretch"
+    posturePicIcon: {
+        height: "100%",
+        marginLeft: -223.5,
+        top: "0%",
+        bottom: "0%",
+        borderRadius: 26,
+        maxHeight: "100%",
+        width: 499,
+        left: "50%",
+        position: "absolute"
     },
-    spinefixLogo1Icon: {
-        maxWidth: "100%",
-        height: 279,
-        alignSelf: "stretch",
-        overflow: "hidden"
-    },
-    startSession: {
-        fontSize: 32,
-        color: "#fff",
-        lineHeight: 32
-    },
-    button: {
-        backgroundColor: Color.colorDarkslateblue,
-        height: 77,
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: StyleVariable.space300,
-        alignSelf: "stretch",
-        overflow: "hidden",
-        borderRadius: Border.br_6xl
-    },
-    statsHistory: {
+    endSession: {
         fontSize: 33,
         lineHeight: 33,
-        color: "#f4faff"
+        color: "#fff",
+        textAlign: "left"
     },
-    fixYourSpineOneSessionAtParent: {
-        marginLeft: -155.5,
-        top: 129,
+    button: {
+        marginLeft: -132.5,
+        top: 691,
+        backgroundColor: Color.colorDarkslateblue,
+        width: 265,
+        height: 77,
+        padding: StyleVariable.space300,
+        alignItems: "center",
+        position: "absolute",
         left: "50%",
-        width: 311,
-        gap: 21,
-        position: "absolute"
-    },
-    homeScreen: {
-        backgroundColor: "#efeddf",
-        flex: 1,
-        height: 812,
         overflow: "hidden",
         borderRadius: Border.br_6xl
+    },
+    cameraScreenGreenChild: {
+        top: 608,
+        left: 32,
+        backgroundColor: "rgba(255, 255, 255, 0.6)",
+        width: 312,
+        height: 71,
+        position: "absolute",
+        borderRadius: Border.br_6xl
+    },
+    clockIcon: {
+        width: 38,
+        height: 38
+    },
+    text: {
+        fontSize: 40,
+        letterSpacing: -0.8,
+        lineHeight: 48,
+        color: Color.colorDarkslateblue,
+        textAlign: "center"
+    },
+    clockParent: {
+        top: 620,
+        left: 77,
+        gap: 24,
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    cameraScreenGreen: {
+        backgroundColor: "#67aee4",
+        borderStyle: "solid",
+        borderColor: "rgba(10, 167, 59, 0.52)",
+        borderWidth: 9,
+        flex: 1,
+        width: "100%",
+        height: 812
     }
 });
 
-export default HomeScreen;
+export default CameraScreenGreen;

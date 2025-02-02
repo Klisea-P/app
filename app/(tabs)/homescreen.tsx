@@ -9,7 +9,7 @@ const HomeScreen = () => {
             <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
             <View style={styles.fixYourSpineOneSessionAtParent}>
                 <Text style={styles.fixYourSpine}>{`Fix your spine
-          					One session at a time`}</Text>
+One session at a time`}</Text>
                 <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
                 <Pressable style={styles.button} onPress={()=>{}}>
                     <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>

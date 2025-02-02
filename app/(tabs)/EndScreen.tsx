@@ -1,35 +1,46 @@
 import * as React from "react";
 import {Image, StyleSheet, Text, View, Pressable} from "react-native";
-import { FontFamily, Color, StyleVariable, Border } from "../../constants/GlobalStyles";
+import { Gap, Color, FontFamily, FontSize, StyleVariable, Border } from "../../constants/GlobalStyles";
 
-const HomeScreen = () => {
+const EndScreen = () => {
 
+
+    // @ts-ignore
     return (
-        <View style={[styles.homeScreen, styles.homeScreenLayout]}>
-            <Image style={styles.path11Icon} resizeMode="cover" source={require("../../assets/images/path1 1.png")} />
-            <View style={styles.fixYourSpineOneSessionAtParent}>
-                <Text style={styles.fixYourSpine}>{`Fix your spine
-          					One session at a time`}</Text>
-                <Image style={[styles.spinefixLogo1Icon, styles.homeScreenLayout]} resizeMode="cover" source={require("../../assets/images/SpineFix_Logo 1.png")} />
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.startSession, styles.startSessionTypo]}>Start Session</Text>
-                </Pressable>
-                <Pressable style={styles.button} onPress={()=>{}}>
-                    <Text style={[styles.statsHistory, styles.startSessionTypo]}>Stats History</Text>
-                </Pressable>
+        <View style={styles.endScreen}>
+
+            <Image style={styles.path11Icon} resizeMode="cover" source="path1 1.png" />
+            <Text style={styles.sessionStats}>{`Session Stats`}</Text>
+            <View style={styles.frameParent}>
+                <View style={[styles.yourSpineWasStraightForParent, styles.forParentFlexBox]}>
+                    <Text style={[styles.yourSpineWas, styles.minutesFlexBox]}>Your spine was straight for</Text>
+                    <Text style={[styles.minutes, styles.minutesFlexBox]}>32 Minutes!</Text>
+                </View>
+                <View style={styles.forParentFlexBox}>
+                    <Text style={[styles.yourSpineWas, styles.minutesFlexBox]}>You were focused for</Text>
+                    <Text style={[styles.minutes, styles.minutesFlexBox]}>57 Minutes!</Text>
+                </View>
+                <View style={styles.forParentFlexBox}>
+                    <Text style={[styles.yourSpineWas, styles.minutesFlexBox]}>Your spine is</Text>
+                    <Text style={[styles.minutes, styles.minutesFlexBox]}> Thankful</Text>
+                </View>
             </View>
+            <Pressable style={styles.button} onPress={()=>{}}>
+                <Text style={styles.goHome}>Go Home</Text>
+            </Pressable>
         </View>);
 };
 
 const styles = StyleSheet.create({
-    homeScreenLayout: {
-        width: "100%",
-        overflow: "hidden"
+    forParentFlexBox: {
+        gap: Gap.gap_md,
+        alignSelf: "stretch",
+        alignItems: "center"
     },
-    startSessionTypo: {
-        textAlign: "left",
-        fontFamily: FontFamily.interMedium,
-        fontWeight: "500"
+    minutesFlexBox: {
+        textAlign: "center",
+        alignSelf: "stretch",
+        color: Color.colorDarkslateblue
     },
     path11Icon: {
         top: -177,
@@ -38,58 +49,72 @@ const styles = StyleSheet.create({
         height: 1079,
         position: "absolute"
     },
-    fixYourSpine: {
-        fontSize: 24,
-        fontWeight: "200",
-        fontFamily: FontFamily.interExtraLight,
-        color: "#000",
-        textAlign: "center",
-        height: 58,
+    sessionStats: {
+        marginLeft: -162.5,
+        top: 53,
+        left: "50%",
+        fontSize: 64,
+        lineHeight: 64,
+        width: 325,
+        height: 123,
+        textAlign: "left",
+        color: Color.colorDarkslateblue,
+        fontFamily: FontFamily.interBold,
+        fontWeight: "700",
+        position: "absolute"
+    },
+    yourSpineWas: {
+        fontSize: FontSize.size_5xl,
+        lineHeight: 24,
+        fontFamily: FontFamily.interRegular
+    },
+    minutes: {
+        fontSize: FontSize.size_13xl,
         lineHeight: 32,
-        alignSelf: "stretch"
+        fontFamily: FontFamily.interBold,
+        fontWeight: "700",
+        textAlign: "center"
     },
-    spinefixLogo1Icon: {
-        maxWidth: "100%",
-        height: 279,
-        alignSelf: "stretch",
-        overflow: "hidden"
+    yourSpineWasStraightForParent: {
+        height: 76
     },
-    startSession: {
-        fontSize: 32,
-        color: "#fff",
-        lineHeight: 32
+    frameParent: {
+        top: 264,
+        left: 36,
+        width: 304,
+        gap: 60,
+        position: "absolute"
+    },
+    goHome: {
+        fontSize: 33,
+        lineHeight: 33,
+        fontWeight: "500",
+        fontFamily: FontFamily.interMedium,
+        color: "#f4faff",
+        textAlign: "left"
     },
     button: {
+        top: 667,
+        left: 32,
         backgroundColor: Color.colorDarkslateblue,
+        width: 311,
         height: 77,
         flexDirection: "row",
-        alignItems: "center",
         justifyContent: "center",
         padding: StyleVariable.space300,
-        alignSelf: "stretch",
+        alignItems: "center",
+        position: "absolute",
         overflow: "hidden",
         borderRadius: Border.br_6xl
     },
-    statsHistory: {
-        fontSize: 33,
-        lineHeight: 33,
-        color: "#f4faff"
-    },
-    fixYourSpineOneSessionAtParent: {
-        marginLeft: -155.5,
-        top: 129,
-        left: "50%",
-        width: 311,
-        gap: 21,
-        position: "absolute"
-    },
-    homeScreen: {
+    endScreen: {
         backgroundColor: "#efeddf",
         flex: 1,
+        width: "100%",
         height: 812,
         overflow: "hidden",
         borderRadius: Border.br_6xl
     }
 });
 
-export default HomeScreen;
+export default EndScreen;
